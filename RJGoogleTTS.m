@@ -25,7 +25,8 @@
     NSString *search = [NSString stringWithFormat:@"http://translate.google.com/translate_tts?q=%@", searchString];
     search = [search stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSLog(@"Search: %@", search);
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:search]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:search]];
+    [request setValue:@"Mozilla/5.0" forHTTPHeaderField:@"User-Agent"];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [delegate sentAudioRequest];
     downloadedData = [[NSMutableData alloc] initWithLength:0];
