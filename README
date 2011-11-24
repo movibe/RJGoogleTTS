@@ -1,0 +1,14 @@
+RJGoogleTTS is a easy to use TTS, which capitalizes on Google's Translate Services.
+
+It is required to set your class to have a RJGoogleTTSDelegate, so you can receive the data asynchronously!
+
+The delegate methods are as follows: 
+
+- (void)receivedAudio:(NSMutableData *)data;
+- (void)sentAudioRequest;
+
+- (void)receivedAudio:(NSMutableData *)data allows the developer to use a custom action when the data is received. This is required and RJGoogleTTS passes a NSMutableData object through the method
+
+- (void)sentAudioRequest allows the developer to realize when the request has been sent. This is required and RJGoogleTTS does not pass anything through this method.
+
+A sample project is on the way shortly!
