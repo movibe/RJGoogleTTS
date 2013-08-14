@@ -22,7 +22,7 @@
 }
 
 - (void)convertTextToSpeech:(NSString *)searchString {
-    NSString *search = [NSString stringWithFormat:@"http://translate.google.com/translate_tts?q=%@", searchString];
+    NSString *search = [NSString stringWithFormat:@"http://translate.google.com/translate_tts?tl=en&q=%@", searchString];
     search = [search stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSLog(@"Search: %@", search);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:search]];
